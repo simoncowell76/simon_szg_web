@@ -1,0 +1,153 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: impact,;
+    font-size: 16px;
+}
+body{
+    background-attachment: fixed;
+    background-image: url('kepek/5443495e7148f98dd6b81000f6dda040.avif');
+    background-position: center;
+}
+
+
+p{
+    padding: 10px;
+}
+.kepiras{
+    text-align: center;
+    font-size: 0.9em;
+}
+ article img{
+    
+    padding: 30px;
+    width: 100%;
+}
+.dropdown {
+  position: relative;
+}
+.dropdown-content {
+  bottom: 100%;
+  display: block;
+  visibility: hidden;
+  position: absolute;
+  background-color: rgb(43, 40, 40, 0.7);
+  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.3);
+  min-width: 100%;
+  padding: 12px 16px;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.9s ease, visibility 0.9s ease, transform 0.4s ease;
+}
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+  display: block;
+  visibility: visible;
+  transform: translateY(0);
+}
+nav ul{
+    font-size: 0;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+nav li{
+    display: inline-block;
+}
+nav a {
+    font-size: 16px;
+    list-style-type: none;
+    text-decoration: none;
+    transition: background 0.2s;
+    color: white;
+    padding: 23px;
+    display: block;
+}
+nav a:hover {
+    background-color: rgb(110, 30, 30);
+}
+header h1{
+    font-size: 2.5em;
+}
+header{
+    font-family: impact, sans-serif;
+    letter-spacing: 4px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(134, 36, 36);
+    color: white;
+    min-height: 100px;
+    grid-area: h;
+    position: relative;
+}
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgb(153, 46, 46);
+    color: white;
+    grid-area: n;
+}
+footer{
+    background-color: rgb(134, 36, 36);
+    padding: 20px;
+    text-align: center;
+    grid-area: f;
+}
+article h2{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 2em;
+    font-family: impact, sans-serif
+}
+main {
+    width: 100%;
+    background-color: rgba(75, 68, 68, 0.5);
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 1000px) 1fr;
+    justify-content: center; 
+    grid-template-areas:
+    "h h h"
+    "n n n"
+    "s ar ."
+    "f f f";
+}
+
+article {
+    background-color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.4);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),url('kepek/Che_Guevara_-_Guerrillero_Heroico_by_Alberto_Korda.jpg');
+    text-align: justify;
+    letter-spacing: 1px;
+    margin: 0 auto; 
+    max-width: 1000px;
+    text-align: justify;
+    width: 100%; 
+    padding: 20px;
+    min-height: 100vh;
+    grid-area: ar;
+}
+
+aside {
+    grid-area: s;
+    margin: 20px auto;
+    width: 300px;
+    background-color: rgb(43, 40, 40, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 6px;
+    height: 100vh;
+}
+.logo {
+    position: absolute;
+    width: 60px;
+    height: auto;
+    left: 20px;
+    top: 20px;
+    transition: transform 0.6s ease-in-out; 
+}
+
+.logo:hover {
+    transform: rotate(360deg); 
+}
