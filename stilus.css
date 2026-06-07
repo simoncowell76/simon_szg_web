@@ -1,7 +1,6 @@
 *{
     box-sizing: border-box;
     margin: 0;
-    font-family: impact,;
     font-size: 16px;
 }
 body{
@@ -9,9 +8,23 @@ body{
     background-image: url('kepek/5443495e7148f98dd6b81000f6dda040.avif');
     background-position: center;
 }
+.zoom{
+    transition: transform 0.3s ease; 
+}
 
-
-p{
+.zoom:hover {
+    transform: scale(1.01); 
+    position: relative;
+    z-index: 10; 
+}
+aside h3{
+    font-size: 1.5rem;
+    padding: 10px;
+    padding-left: 0px;
+}
+article p{
+    text-align: justify;
+    font-size: 1.2rem;
     padding: 10px;
 }
 .kepiras{
@@ -20,7 +33,7 @@ p{
 }
  article img{
     
-    padding: 30px;
+    padding: 20px;
     width: 100%;
 }
 .dropdown {
@@ -118,11 +131,8 @@ article {
     background-color: rgba(255, 255, 255, 0.5);
     text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.4);
     background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),url('kepek/Che_Guevara_-_Guerrillero_Heroico_by_Alberto_Korda.jpg');
-    text-align: justify;
-    letter-spacing: 1px;
     margin: 0 auto; 
     max-width: 1000px;
-    text-align: justify;
     width: 100%; 
     padding: 20px;
     min-height: 100vh;
@@ -132,12 +142,12 @@ article {
 aside {
     grid-area: s;
     margin: 20px auto;
-    width: 300px;
+    width: 80%;
     background-color: rgb(43, 40, 40, 0.7);
     color: white;
     padding: 20px;
     border-radius: 6px;
-    height: 100vh;
+    word-wrap: break-word;
 }
 .logo {
     position: absolute;
@@ -150,4 +160,71 @@ aside {
 
 .logo:hover {
     transform: rotate(360deg); 
+}
+.logo.rotated {
+    transform: rotate(180deg);
+}
+.offscreen {
+    display: none;
+}
+@media screen and (max-width: 900px) {
+main {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "h"
+            "ar"
+            "s"
+            "f";
+    }
+
+    nav {
+        display: none;
+    }
+    article img{
+    
+    padding: 10px;
+    }
+    .offscreen {
+        display: block;
+        height: 100vh;
+        width: 100%;
+        max-width: 300px;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        z-index: 999;
+        background-color: rgb(134, 36, 36);
+        box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.5);
+        transition: right 0.4s ease-in-out;
+        padding-top: 100px;
+    }
+    .offscreen.active {
+        right: 0;
+    }
+
+    .offscreen ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .offscreen a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        font-size: 1.3rem;
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .logo {
+        position: fixed;
+        cursor: pointer;
+    }
+
+    aside {
+        width: 100%;
+        height: auto;
+        margin:  0 auto;
+    }
 }

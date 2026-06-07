@@ -1,21 +1,35 @@
 <!doctype html>
 <html lang="hu">
   <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <meta name="description" content="Kuba történelméről egy weboldal" >
-    <meta name="keywords" content="Kuba, történelem, kommunizmus, marxizmus" >
-    <meta name="author" content="Albert Simon" >
-    <link rel="stylesheet" href="stilus.css" >
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kuba történelméről egy weboldal" />
+    <meta name="keywords" content="Kuba, történelem, kommunizmus, marxizmus" />
+    <meta name="author" content="Albert Simon" />
+    <link rel="stylesheet" href="stilus.css" />
     <title>Albert Simon</title>
   </head>
   <body>
     <main>
       <header>
-        <img src="kepek/Soviet_Hammer_and_Sickle_(1924).svg.png" class="logo" alt="szovjet sarló-kalapács" />
+        <img
+          src="kepek/Soviet_Hammer_and_Sickle_(1924).svg.png"
+          class="logo"
+          alt="szovjet sarló-kalapács"
+        />
         <h1>KUBA TÖRTÉNELME</h1>
         <p>Készítette: Albert Simon</p>
       </header>
+
+      <div class="offscreen">
+        <ul>
+          <li><a href="index.html">Főoldal</a></li>
+          <li><a href="gyarmat.html">Kuba gyarmatosítása</a></li>
+          <li><a href="amerika.html">Amerikai diktatúra</a></li>
+          <li><a href="kommunizmus.html">Kommunizmus történelme</a></li>
+        </ul>
+      </div>
+
       <nav>
         <ul>
           <li><a href="index.html">Főoldal</a></li>
@@ -76,13 +90,13 @@
           elterjedt propaganda hiedelmeket kritikusan vizsgáljon.
         </p>
         <div class="kepk">
-          <img src="kepek/raisz_cuba_150dpi.png" alt="Kuba képe" />
+          <img src="kepek/raisz_cuba_150dpi.png"  class="zoom" alt="Kuba képe" />
           <p class="kepiras">
             Kuba részletes térképe Erwin Raisz és Gerardo Canet által
           </p>
         </div>
       </article>
-      <aside class="oldalsav">
+      <aside>
         <h3>Bővül a kubai magánszektor</h3>
         <p>
           Évtizedes állami dominancia után Kuba egyre nagyobb teret enged a kis-
@@ -103,5 +117,13 @@
         <p>&copy;Albert Simon</p>
       </footer>
     </main>
+    <script>
+      const logo = document.querySelector('.logo');
+      const offscreen = document.querySelector('.offscreen');
+      logo.addEventListener('click', () => {
+        offscreen.classList.toggle('active');
+        logo.classList.toggle('rotated');
+      });
+    </script>
   </body>
 </html>

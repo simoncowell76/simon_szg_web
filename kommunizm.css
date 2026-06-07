@@ -1,13 +1,13 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  font-size: 16px;
 }
 body {
   background-attachment: fixed;
   background-image: url("kepek/cuba.webp");
   background-position: center;
 }
-
 .zoom {
   transition: transform 0.3s ease;
 }
@@ -17,10 +17,21 @@ body {
   position: relative;
   z-index: 10;
 }
-
+aside h3 {
+  font-size: 1.5rem;
+  padding: 10px;
+  padding-left: 0px;
+}
+article p {
+  text-align: justify;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+.kepiras {
+  text-align: center;
+  font-size: 0.9em;
+}
 article img {
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
   width: 100%;
 }
 .dropdown {
@@ -38,9 +49,9 @@ article img {
   opacity: 0;
   transform: translateY(5px);
   transition:
-    opacity 0.9s ease,
-    visibility 0.9s ease,
-    transform 0.4s ease;
+  opacity 0.9s ease,
+  visibility 0.9s ease,
+  transform 0.4s ease;
 }
 .dropdown:hover .dropdown-content {
   opacity: 1;
@@ -48,8 +59,21 @@ article img {
   visibility: visible;
   transform: translateY(0);
 }
+.kozepkep {
+  float: left;
+  max-width: 500px;
+  padding: 30px;
+}
+
+.kozepkep img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 nav ul {
-  
+  font-size: 0;
   display: inline-block;
   padding: 0;
   margin: 0;
@@ -98,90 +122,47 @@ footer {
   text-align: center;
   grid-area: f;
 }
-.kepk {
-  grid-area: egy;
-}
-.kepiras {
-  text-align: justify;
-  font-size: 1.2rem;
-  padding: 10px;
-  grid-area: iras;
-}
-.kep1 {
-  grid-area: ketto;
-}
-.kep2 {
-  grid-area: harom;
-}
-.cim {
-  padding-left: 40px;
-  grid-area: c;
-}
 article h2 {
   padding-bottom: 20px;
   padding-top: 20px;
   font-size: 2em;
   font-family: impact, sans-serif;
 }
-
 main {
   width: 100%;
   background-color: rgba(75, 68, 68, 0.5);
   display: grid;
-  grid-template-columns: 25% 50% 25%;
+  grid-template-columns: 1fr minmax(auto, 1000px) 1fr;
   justify-content: center;
   grid-template-areas:
     "h h h"
     "n n n"
-    "se ar as"
+    "s ar ."
     "f f f";
 }
+
 article {
   background-color: rgba(255, 255, 255, 0.5);
   text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.4);
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-    url("kepek/unspeech.png");
+  background-image:linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),url("kepek/unspeech.png");
   margin: 0 auto;
   max-width: 1000px;
   width: 100%;
   padding: 20px;
   min-height: 100vh;
   grid-area: ar;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "c c"
-    "egy iras"
-    "ketto iras"
-    "harom iras";
-  grid-template-rows: auto min-content min-content min-content 1fr;
-  align-items: start;
-  gap: 20px;
-}
-section {
-  grid-area: se;
-  margin: 20px auto;
-  width: 80%;
-  background-color: rgba(255, 255, 255, 0.7);
-  color: rgb(0, 0, 0);
-  padding: 20px;
-  border-radius: 6px;
-  height: auto;
-  word-wrap: break-word;
-}
-aside {
-  grid-area: as;
-  margin: 20px auto;
-  width: 80%;
-  background-color: rgba(255, 255, 255, 0.7);
-  color: rgb(0, 0, 0);
-  padding: 20px;
-  border-radius: 6px;
-  height: auto;
-  word-wrap: break-word;
 }
 
+aside {
+  grid-area: s;
+  margin: 20px auto;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 6px;
+  word-wrap: break-word;
+}
 .logo {
   position: absolute;
   width: 60px;
@@ -194,43 +175,30 @@ aside {
 .logo:hover {
   transform: rotate(360deg);
 }
+.logo.rotated {
+  transform: rotate(180deg);
+}
 .offscreen {
   display: none;
 }
-
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 900px) {
   main {
     grid-template-columns: 1fr;
     grid-template-areas:
       "h"
       "ar"
-      "se"
-      "as"
+      "s"
       "f";
-  }
-  article {
-    grid-area: auto;
-    display: block;
-    min-height: auto;
-  }
-  aside,
-  section {
-    background-color: lightgrey;
-    width: 80%;
-  }
-  .cim,
-  .kepk,
-  .kep1,
-  .kep2,
-  .kepiras {
-    margin: 0 auto;
-    grid-area: auto;
-    padding: 10px 0;
-    max-width: 700px;
-    width: 100%;
   }
   nav {
     display: none;
+  }
+  .kozepkep {
+    float: none;
+    margin: 20px auto;
+    max-width: 90%;
+    text-align: center;
+    padding: 0;
   }
   .offscreen {
     display: block;
@@ -246,7 +214,6 @@ aside {
     transition: right 0.4s ease-in-out;
     padding-top: 100px;
   }
-
   .offscreen.active {
     right: 0;
   }
@@ -266,9 +233,14 @@ aside {
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
-
   .logo {
     position: fixed;
     cursor: pointer;
+  }
+
+  aside {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
   }
 }
